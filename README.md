@@ -1,2 +1,3 @@
 # Apache-Kafka
-Some tasks done using Apache kafka
+Tasks done using Apache kafka
+extract it to get directory structure of project
