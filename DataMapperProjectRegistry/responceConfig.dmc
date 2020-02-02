@@ -1,0 +1,34 @@
+map_S_result_S_root = function(){ 
+var outputroot={};
+
+var count_i_item = 0;
+outputroot =  {};
+outputroot.index_name = inputresult.index_name;
+outputroot.title = inputresult.title;
+outputroot.desc = inputresult.desc;
+outputroot.target_bucket =  {};
+outputroot.records =  [];
+
+for(i_item in inputresult.records.item){
+outputroot.records[count_i_item] =  {};
+outputroot.records[count_i_item].country = (inputresult.records.item[i_item].district_id).toString();
+outputroot.records[count_i_item].city = inputresult.records.item[i_item].statename;
+outputroot.records[count_i_item].station = inputresult.records.item[i_item].districtname;
+
+count_i_item++;
+}
+return outputroot;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+

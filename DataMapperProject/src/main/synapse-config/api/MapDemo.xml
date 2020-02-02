@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/mapdemo" name="MapDemo" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST GET">
+        <inSequence>
+            <datamapper config="gov:datamapper/requestConfig.dmc" inputSchema="gov:datamapper/requestConfig_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/requestConfig_outputSchema.json" outputType="XML" xsltStyleSheet="gov:datamapper/requestConfig_xsltStyleSheet.xml"/>
+            <property name="messageType" scope="axis2" type="STRING" value="application/soap+xml"/>
+            <send>
+                <endpoint>
+                    <http method="post" uri-template="http://172.17.0.1:9443/carbon/mapdemo"/>
+                </endpoint>
+            </send>
+        </inSequence>
+        <outSequence>
+            <datamapper config="gov:datamapper/responceConfig.dmc" inputSchema="gov:datamapper/responceConfig_inputSchema.json" inputType="XML" outputSchema="gov:datamapper/responceConfig_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/responceConfig_xsltStyleSheet.xml"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="fileWriteSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="sequence" value="fileWriteSequence"/>
+    </log>
+    <property expression="fn:concat(fn:substring-after(get-property('MessageID'), 'urn:uuid:'), '.txt')" name="transport.vfs.ReplyFileName" scope="transport" type="STRING" xmlns:ns2="http://org.apache.synapse/xsd"/>
+    <property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
+    <send>
+        <endpoint name="FileEpr">
+            <address uri="vfs:file:///home/vishal/IntegrationStudio/workspace/FileProxy/outputFolder"/>
+        </endpoint>
+    </send>
+</sequence>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/healthcare" name="HealthcareAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/querydoctor/{category}">
+        <inSequence>
+            <conditionalRouter continueAfter="true"/>
+            <log description="Request Log" level="custom">
+                <property name="message" value="&quot;Welcome to Healthcare service&quot;"/>
+            </log>
+            <send/>
+        </inSequence>
+        <outSequence>
+            <send receive=""/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

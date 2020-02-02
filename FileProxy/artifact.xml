@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="FileProxy" groupId="com.example.FileProxy.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/FileProxy.xml</file>
+    </artifact>
+    <artifact name="databaseSequence" groupId="com.example.FileProxy.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/databaseSequence.xml</file>
+    </artifact>
+    <artifact name="fileWriteSequence" groupId="com.example.FileProxy.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/fileWriteSequence.xml</file>
+    </artifact>
+</artifacts>

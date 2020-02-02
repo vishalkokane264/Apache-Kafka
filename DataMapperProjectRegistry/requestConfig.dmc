@@ -1,0 +1,35 @@
+map_S_root_S_result = function(){ 
+var outputresult={};
+
+var count_i_records = 0;
+outputresult =  {};
+outputresult.index_name = inputroot.index_name;
+outputresult.desc = inputroot.desc;
+outputresult.org =  {};
+outputresult.sector =  {};
+outputresult.field =  {};
+outputresult.target_bucket =  {};
+outputresult.records =  {};
+outputresult.records.item =  [];
+
+for(i_records in inputroot.records){
+outputresult.records.item[count_i_records] =  {};
+outputresult.records.item[count_i_records].statename = inputroot.records[i_records].state;
+
+count_i_records++;
+}
+return outputresult;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
